@@ -1,0 +1,27 @@
+{
+    "name": "evalue/evalue",
+    "description": "testing for crud",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "chirag patel",
+            "email": "chirag.ghevariya@plusaim.com"
+        }
+    ],
+    "minimum-stability":"stable",
+     "autoload": {
+        "psr-0": {
+            "App\\": "app/",
+            "evalue\\crud\\": "packages/evalue/crud/src/"
+        },
+        "files": [
+            "src/Helper/constant_helper.php",
+            "src/Helper/my_helper.php"
+        ]
+    },
+    "require": {
+
+        "php": ">=5.5.9"
+    }
+}
