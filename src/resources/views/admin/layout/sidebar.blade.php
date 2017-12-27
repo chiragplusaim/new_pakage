@@ -29,4 +29,4 @@
 		</div>
 	</div>
 
-@include('crud::layout.javascript')
+@include('crud::admin.layout.javascript')
