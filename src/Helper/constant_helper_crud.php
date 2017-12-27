@@ -2621,4 +2621,13 @@
 	{
 		return "youtube_video";
 	}
+	/**
+	* CRUD TESTING LARAVEL PACKAGE DEVELOMENT CONSTANT
+	*/
+
+	function ADMIN_CRUD_KEYWORD()
+	{
+		return "crud_opeation";
+	}
+	
 ?>

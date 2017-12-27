@@ -16,8 +16,8 @@
             "evalue\\crud\\": "src/"
         },
         "files": [
-            "src/Helper/constant_helper.php",
-            "src/Helper/my_helper.php"
+            "src/Helper/constant_helper_crud.php",
+            "src/Helper/my_helper_crud.php"
         ]
     },
     "extra": {

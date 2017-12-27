@@ -5,7 +5,7 @@
 		<h3 class="heading">Test {{($encrypted_id && $encrypted_id!="")? "Edit" : "Add" }}</h3>
 		<div class="row-fluid">
 			<div class="span8">
-				<form class="form-horizontal" name="input_form" id="input_form" method="POST" action="{{url('/do_save')}}">
+				<form class="form-horizontal" name="input_form" id="input_form" method="POST" action="{{ADMIN_URL().ADMIN_CRUD_KEYWORD().'/do_save'}}">
 					<fieldset>
 						{!! GENERATE_CSRF_TOKEN()!!}
 						@if(isset($encrypted_id) && $encrypted_id!="")
@@ -100,7 +100,7 @@
 	<script>
 	if($("#input_form").length>0)
 	{
-		if($("#banner_id").length>0)
+		if($("#test_module_id").length>0)
 		{
 			var test_module_id = $("#test_module_id").val();
 		}

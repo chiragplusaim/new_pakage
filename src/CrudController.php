@@ -12,7 +12,7 @@ class CrudController extends Controller
     public function index()
     {	
     	$list_data=TestModule::get();
-    	return view('crud::admin.'.ADMIN_MODULE_KEYWORD().'.crud_opeation.list',['list_data'=>$list_data]);
+    	return view('crud::admin.modules.'.ADMIN_CRUD_KEYWORD().'.list',['list_data'=>$list_data]);
     }
     public function add($encrypted_id = Null)
     {
@@ -25,7 +25,7 @@ class CrudController extends Controller
     	{
     		$edit_data="";
     	}
-    	return view('crud::admin.'.ADMIN_MODULE_KEYWORD().'.crud_opeation.edit',['encrypted_id'=>$encrypted_id,'edit_data'=>$edit_data]);
+    	return view('crud::admin.modules.'.ADMIN_CRUD_KEYWORD().'.edit',['encrypted_id'=>$encrypted_id,'edit_data'=>$edit_data]);
     }
 	public function do_save(Request $r)
     {	
@@ -45,7 +45,7 @@ class CrudController extends Controller
     		$obj->email=$input['email'];
     		$obj->status=$input['status'];
     		$obj->save();
-    	return redirect('/crud');
+    	return redirect(ADMIN_KEYWORD().'/'.ADMIN_CRUD_KEYWORD());
     }
     /**
      * Change the status of banner in database
@@ -67,7 +67,7 @@ class CrudController extends Controller
 		}
 		$obj->save();
 		session()->flash('succ_msg', trans('crud::lang_data.sess_change_succ'));
-		return redirect('/crud');
+		return redirect(ADMIN_KEYWORD().'/'.ADMIN_CRUD_KEYWORD());
 	}
 	/**
      * Delete the data from database of TestModule
@@ -81,7 +81,7 @@ class CrudController extends Controller
 		$obj = TestModule::where("test_module_id",$id)->first();
 		$obj->delete();
 		session()->flash('succ_msg', trans('crud::lang_data.sess_delet_succ'));
-		return redirect('/crud');
+		return redirect(ADMIN_KEYWORD().'/'.ADMIN_CRUD_KEYWORD());
 	}
 	/**
      * Delete all testmodule (All testmodule which is selected by user)
@@ -107,7 +107,7 @@ class CrudController extends Controller
 		{
 			session()->flash('err_msg', trans('lang_data.sess_delet_error'));
 		}
-		return redirect('/crud');
+		return redirect(ADMIN_KEYWORD().'/'.ADMIN_CRUD_KEYWORD());
 	}
 	/**
      * Active all banner (All banner which is selected by user)
@@ -137,7 +137,7 @@ class CrudController extends Controller
 		{
 			session()->flash('succ_msg', trans('lang_data.sess_active_error'));
 		}
-		return redirect('/crud');
+		return redirect(ADMIN_KEYWORD().'/'.ADMIN_CRUD_KEYWORD());
 	}
 	/**
      * Inactive all banner (All banner which is selected by user)
@@ -167,7 +167,7 @@ class CrudController extends Controller
 		{
 			session()->flash('succ_msg', trans('lang_data.sess_inactive_error'));
 		}
-		return redirect('/crud');
+		return redirect(ADMIN_KEYWORD().'/'.ADMIN_CRUD_KEYWORD());
 	}
     
 }
