@@ -11,9 +11,9 @@
     ],
     "minimum-stability":"stable",
      "autoload": {
-        "psr-0": {
+        "psr-4": {
             "App\\": "app/",
-            "evalue\\crud\\": "packages/evalue/crud/src/"
+            "evalue\\crud\\": "evalue/crud/src/"
         },
         "files": [
             "src/Helper/constant_helper.php",
