@@ -13,7 +13,7 @@
      "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "evalue\\crud\\": "evalue/crud/src/"
+            "evalue\\crud\\": "src/"
         },
         "files": [
             "src/Helper/constant_helper.php",
