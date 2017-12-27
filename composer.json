@@ -20,6 +20,13 @@
             "src/Helper/my_helper.php"
         ]
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "evalue\\crud\\CrudServiceProvider"
+            ]
+        }
+    },
     "require": {
 
         "php": ">=5.5.9"
