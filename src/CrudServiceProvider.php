@@ -34,6 +34,9 @@ class CrudServiceProvider extends ServiceProvider
         $this->publishes([
         __DIR__.'/resources/lang/en/' => base_path('/resources/lang/en/'),
         ]);
+        $this->publishes([
+        __DIR__.'/TestModule.php' => base_path('/app/TestModule.php'),
+        ]);
 
         // $this->app->register(HtmlServiceProvider::class);
         //  $loader = AliasLoader::getInstance();
