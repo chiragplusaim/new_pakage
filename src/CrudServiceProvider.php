@@ -17,7 +17,7 @@ class CrudServiceProvider extends ServiceProvider
        $this->publishes([__DIR__.'/config/config.php' => config_path('config.php')], 'crud');
        $this->loadTranslationsFrom(__DIR__.'/resources/lang','crud');
        $this->publishes([
-        __DIR__.'/resources/views' => base_path('resources/views/admin/modules/'),
+        __DIR__.'/resources/views/admin/modules/' => base_path('resources/views/admin/modules/'),
         ]);
        $this->publishes([
         __DIR__.'/routes/' => base_path('routes/'),
