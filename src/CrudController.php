@@ -1,9 +1,10 @@
 <?php
-
 namespace evalue\crud;
+namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Crypt;
+use App\TestModule;
 use App\Http\Controllers\Controller;
 
 class CrudController extends Controller
@@ -11,8 +12,18 @@ class CrudController extends Controller
     //
     public function index()
     {	
-    	$list_data=TestModule::get();
-    	return view('crud::admin.modules.'.ADMIN_CRUD_KEYWORD().'.list',['list_data'=>$list_data]);
+    	if (env('PACKAGE_DEVELOPMENT')) 
+    	{
+    		$list_data=TestModule::get();	
+    		return view('crud::admin.modules.'.ADMIN_CRUD_KEYWORD().'.list',['list_data'=>$list_data]);
+    	}
+    	else
+    	{
+    		$list_data=TestModule::get();
+    		return view('admin.modules.'.ADMIN_CRUD_KEYWORD().'.list',['list_data'=>$list_data]);
+    	}
+    	
+    	
     }
     public function add($encrypted_id = Null)
     {
@@ -25,7 +36,15 @@ class CrudController extends Controller
     	{
     		$edit_data="";
     	}
-    	return view('crud::admin.modules.'.ADMIN_CRUD_KEYWORD().'.edit',['encrypted_id'=>$encrypted_id,'edit_data'=>$edit_data]);
+    	if (env('PACKAGE_DEVELOPMENT')) 
+    	{
+    		
+    		return view('crud::admin.modules.'.ADMIN_CRUD_KEYWORD().'.edit',['encrypted_id'=>$encrypted_id,'edit_data'=>$edit_data]);	
+    	}
+    	else
+    	{
+    		return view('admin.modules.'.ADMIN_CRUD_KEYWORD().'.edit',['encrypted_id'=>$encrypted_id,'edit_data'=>$edit_data]);
+    	}
     }
 	public function do_save(Request $r)
     {	

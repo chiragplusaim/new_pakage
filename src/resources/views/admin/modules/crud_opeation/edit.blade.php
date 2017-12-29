@@ -1,4 +1,8 @@
-@extends('crud::admin.layout.master')
+@if(env('PACKAGE_DEVELOPMENT'))
+	@extends('crud::admin.layout.master')
+@else
+@extends('admin.layout.master')
+@endif
 @section('content')
 <div class="row-fluid">
 	<div class="span12">

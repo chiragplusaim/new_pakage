@@ -1,5 +1,5 @@
 <?php
-namespace evalue\crud;
+namespace evalue\crud;   
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 
@@ -58,6 +58,12 @@ class CrudServiceProvider extends ServiceProvider
           $this->mergeConfigFrom(__DIR__.'/config/config.php', 'crud');
           require_once __DIR__ . '/Helper/constant_helper_crud.php';
           require_once __DIR__ . '/Helper/my_helper_crud.php';
+
+           if ($this->app->runningInConsole()) {
+            $this->commands([
+                EvalueCrud::class,
+            ]);
+        }
     
      }
    

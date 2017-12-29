@@ -1,5 +1,6 @@
 <?php 
 namespace evalue\crud;
+namespace App;
 use Illuminate\Database\Eloquent\Model;
 class TestModule extends Model
 {
