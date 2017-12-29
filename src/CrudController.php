@@ -1,6 +1,6 @@
 <?php
 namespace evalue\crud;
-namespace App\Http\Controllers;
+// namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Crypt;
@@ -10,6 +10,14 @@ use App\Http\Controllers\Controller;
 class CrudController extends Controller
 {
     //
+    public function __construct()
+	{
+		//THIS WILL CHECK IF USER IS LOGIN OR NOT
+		$this->middleware('auth');
+		//THIS WILL CHECK IF USER HAS RIGHTS TO ACCESS THIS MODULE
+		$this->middleware('rights');
+	}
+
     public function index()
     {	
     	if (env('PACKAGE_DEVELOPMENT')) 

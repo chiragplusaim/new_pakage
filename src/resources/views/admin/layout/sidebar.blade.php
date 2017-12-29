@@ -29,4 +29,8 @@
 		</div>
 	</div>
 
+@if(env('PACKAGE_DEVELOPMENT'))
 @include('crud::admin.layout.javascript')
+@else
+	@include('admin.layout.javascript')
+@endif

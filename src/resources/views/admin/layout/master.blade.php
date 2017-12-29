@@ -1,4 +1,11 @@
-@include('crud::admin.layout.header')
-@yield('content')
-@include('crud::admin.layout.sidebar')
-@include('crud::admin.layout.footer')
+@if(env('PACKAGE_DEVELOPMENT'))
+	@include('crud::admin.layout.header')
+	@yield('content')
+	@include('crud::admin.layout.sidebar')
+	@include('crud::admin.layout.footer')
+@else
+	@include('admin.layout.header')
+	@yield('content')
+	@include('admin.layout.sidebar')
+	@include('admin.layout.footer')
+@endif
